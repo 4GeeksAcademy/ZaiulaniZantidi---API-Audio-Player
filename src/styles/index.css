@@ -1,11 +1,189 @@
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.audio-player-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111827;
+    color: #e5e7eb;
+    padding: 1rem;
+    font-family: "Inter", sans-serif;
+}
 
-*/
+.main-card {
+    width: 100%;
+    max-width: 48rem;
+    padding: 2rem;
+    background-color: #1f2937;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #c084fc;
+}
+
+.current-song-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.current-song-info .song-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.current-song-info .status {
+    color: #9ca3af;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.control-button {
+    padding: 0.75rem;
+    border-radius: 9999px;
+    background-color: #374151;
+    transition-property: background-color;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    color: #e5e7eb;
+    border: none;
+    cursor: pointer;
+}
+
+.control-button:hover:not(:disabled) {
+    background-color: #4b5563;
+}
+
+.control-button.play-pause-btn {
+    padding: 1rem;
+    background-color: #9333ea;
+    color: white;
+}
+
+.control-button.play-pause-btn:hover:not(:disabled) {
+    background-color: #7e22ce;
+}
+
+.control-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.timeline-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-container span {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    width: 2.5rem;
+    text-align: center;
+}
+
+.timeline-slider {
+    flex-grow: 1;
+    height: 0.5rem;
+    background-color: #374151;
+    border-radius: 0.5rem;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    accent-color: #9333ea;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #9333ea;
+}
+
+.timeline-slider:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.playlist-card {
+    background-color: #374151;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.playlist-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.playlist-list {
+    max-height: 16rem;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+    color: #e5e7eb;
+}
+
+.playlist-item:hover {
+    background-color: #4b5563;
+}
+
+.playlist-item.active {
+    background-color: #9333ea;
+    color: white;
+}
+
+.playlist-item .song-id {
+    color: #9ca3af;
+    margin-right: 1rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.playlist-item .song-name {
+    flex-grow: 1;
+}
+
+.loading-message {
+    text-align: center;
+    color: #9ca3af;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+}
+
+.play-pause-btn .icon {
+    width: 2rem;
+    height: 2rem;
+}
